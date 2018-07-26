@@ -146,7 +146,7 @@ void SetEnemyShot(int index)
 void MoveEnemyShot(void)
 {
 	int i;
-	double rad;
+	//double rad;
 
 	// ƒtƒ‰ƒO‚Ì—§‚Á‚Ä‚¢‚é’e‚¾‚¯ˆÚ“®‚³‚¹‚é
 

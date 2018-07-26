@@ -5,7 +5,7 @@ void InitResult(void)
 {
 	FILE *fp = NULL;
 
-	fopen_s(&fp, "Game/HighScore.txt", "r");
+	fopen_s(&fp, "Resources/HighScore.txt", "r");
 	fscanf_s(fp, "%d", &high_score);
 	fclose(fp);
 }
@@ -16,7 +16,7 @@ void UpdateResult(void)
 
 	if ((score > high_score))
 	{
-		fopen_s(&fp, "Game/HighScore.txt", "w");
+		fopen_s(&fp, "Resources/HighScore.txt", "w");
 		fprintf(fp, "%d", score);
 		fclose(fp);
 		check = TRUE;
