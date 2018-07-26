@@ -1,4 +1,5 @@
 #include "Boss.h"
+#include "Sound.h"
 
 void InitBossShot(void)
 {
@@ -116,6 +117,7 @@ void BossShotPattern0(void)
 			if (sum > 36)
 			{
 				sum = 0;
+				sound_flag[2] = TRUE;
 				break;
 			}
 		}
@@ -185,6 +187,7 @@ void BossShotPattern1(void)
 			if (sum > 36)
 			{
 				sum = 0;
+				sound_flag[2] = TRUE;
 				break;
 			}
 		}
@@ -227,6 +230,7 @@ void BossShotCircle1(double spd, double deg, int interval)
 			if (sum > num)
 			{
 				sum = 0;
+				sound_flag[2] = TRUE;
 				break;
 			}
 		}
@@ -267,6 +271,7 @@ void BossShotCircle2(double spd, double deg, int interval)
 			if (sum > num)
 			{
 				sum = 0;
+				sound_flag[2] = TRUE;
 				break;
 			}
 		}
@@ -338,6 +343,7 @@ void BossSpecialShot0(void)
 				boss_shot[j].vel.y = sin(boss_shot[j].rad) * boss_shot[j].spd.y;
 
 				boss_shot[j].tex = enemy_shot_graph[146];
+				sound_flag[2] = TRUE;
 				//se_flag[0] = 1;
 			}
 		}
@@ -362,6 +368,7 @@ void BossSpecialShot0(void)
 			boss_shot[j].vel.y = sin(boss_shot[j].rad) * boss_shot[j].spd.y;
 
 			boss_shot[j].tex = enemy_shot_graph[140];
+			sound_flag[2] = TRUE;
 			//se_flag[0] = 1;
 		}
 	}
@@ -410,7 +417,7 @@ void BossSpecialShot1(void)
 				boss_shot[j].tex = enemy_shot_graph[99];
 			}
 		}
-		if (t % 10 == 0);
+		if (t % 10 == 0)sound_flag[2] = TRUE;
 		//se_flag[0] = 1;
 	}
 	//Ž©‹@ˆË‘¶‚É‚æ‚é8•ûŒü”­ŽË
@@ -439,7 +446,7 @@ void BossSpecialShot1(void)
 				boss_shot[j].tex = enemy_shot_graph[99];
 			}
 		}
-		if (t % 10 == 0);
+		if (t % 10 == 0)sound_flag[2] = TRUE;
 		//se_flag[0] = 1;
 	}
 
@@ -545,6 +552,7 @@ void BossSpecialShot2(void)
 					boss_shot[k].vel.y = sin(boss_shot[k].rad) * boss_shot[k].spd.y;
 
 					boss_shot[k].tex = enemy_shot_graph[355];
+					sound_flag[2] = TRUE;
 					//se_flag[0] = 1;
 				}
 			}
@@ -575,6 +583,7 @@ void BossSpecialShot2(void)
 					boss_shot[k].vel.y = sin(boss_shot[k].rad) * boss_shot[k].spd.y;
 
 					boss_shot[k].tex = enemy_shot_graph[107];
+					sound_flag[2] = TRUE;
 					//se_flag[0] = 1;
 				}
 				angle -= (PI * 2) / 36;

@@ -3,6 +3,8 @@
 #include "Result.h"
 #include "Defines.h"
 
+#include "Sound.h"
+
 // ÉOÉçÅ[ÉoÉãïœêî
 
 static SceneID active_scene;
@@ -22,6 +24,8 @@ void InitScene(void)
 	scene_count = 0;
 
 	logo_handle = LoadGraph("Resources/Textures/ã…ìåâAózò^.png");
+
+	InitSound();
 
 	InitGameCount();
 	InitPlay();
@@ -60,10 +64,15 @@ void UpdateScene(void)
 		break;
 
 	case SCENE_PLAY:
+		if (sound_flag[0] == -1)
+		{
+			sound_flag[0] = TRUE;
+		}
 		UpdatePlay();
 		break;
 
 	case SCENE_RESULT:
+		StopSoundMem(sound_handle[0]);
 		UpdateResult();
 		if (GetInputKeyData(KEY_INPUT_SPACE) && (!GetInputKeyOldData(KEY_INPUT_SPACE)))
 		{
@@ -75,6 +84,8 @@ void UpdateScene(void)
 		}
 		break;
 	}
+
+	UpdateSound();
 	UpdateKeyOld();
 }
 

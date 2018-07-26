@@ -9,6 +9,7 @@
 #include "Item.h"
 #include "Graze.h"
 #include "Defines.h"
+#include "Sound.h"
 
 #define PLAYER_R (PLAYER_SIZE / 14)
 
@@ -216,6 +217,7 @@ void PlayerShot_EnemyCollision(void)
 						SetEnemyDeadFlag(j);
 						SetDeadEffect(j);
 						SetEnemyKillScore();
+						sound_flag[4] = TRUE;
 						SetItemFlag(enemy[j].item, enemy[j].x, enemy[j].y);
 					}
 
@@ -238,8 +240,9 @@ void EnemyShot_PlayerCollision(void)
 				{
 					SetPlayerDeadFlag();
 					SetPlayerDeadEffectFlag();
+					sound_flag[3] = TRUE;
 					player_life -= 1;
-					player_bom = 3;
+					player_bom = 5;
 					break;
 				}
 			}
@@ -329,6 +332,7 @@ void BossShot_PlayerCollison(void)
 				{
 					SetPlayerDeadFlag();
 					SetPlayerDeadEffectFlag();
+					sound_flag[3] = TRUE;
 					player_life -= 1;
 					player_bom = 3;
 					break;

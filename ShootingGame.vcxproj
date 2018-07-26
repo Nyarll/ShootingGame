@@ -108,6 +108,7 @@
     <ClCompile Include="Game\Result.cpp" />
     <ClCompile Include="Game\SceneManager.cpp" />
     <ClCompile Include="Game\Score.cpp" />
+    <ClCompile Include="Game\Sound.cpp" />
     <ClCompile Include="Libraries\GameLibrary\GameLibGraphics.cpp" />
     <ClCompile Include="Libraries\GameLibrary\GameLibInput.cpp" />
     <ClCompile Include="Libraries\GameLibrary\GameLibMath.cpp" />
@@ -134,6 +135,7 @@
     <ClInclude Include="Game\Result.h" />
     <ClInclude Include="Game\SceneManager.h" />
     <ClInclude Include="Game\Score.h" />
+    <ClInclude Include="Game\Sound.h" />
     <ClInclude Include="Libraries\GameLibrary\GameLib.h" />
     <ClInclude Include="Libraries\GameLibrary\GameLibGraphics.h" />
     <ClInclude Include="Libraries\GameLibrary\GameLibInput.h" />

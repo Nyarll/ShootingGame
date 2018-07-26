@@ -2,6 +2,7 @@
 #include "Enemy.h"
 #include "Player.h"
 #include "Defines.h"
+#include "Sound.h"
 
 double state[ENEMY_SHOT_NUM];
 // 0 - 31 ƒr[ƒ€
@@ -339,6 +340,7 @@ void EnemyShotPattern0(int i)
 				enemy_shot[j].base.speed.y = shot_speed_data[j];
 				enemy_shot[j].base.pos.x = enemy[i].x;
 				enemy_shot[j].base.pos.y = enemy[i].y;
+				sound_flag[2] = TRUE;
 				SetEnemyShotGraph(i, j);
 				break;
 			}
@@ -369,7 +371,7 @@ void EnemyShotPattern1(int i)
 
 				enemy_shot[j].base.pos.x = enemy[i].x;
 				enemy_shot[j].base.pos.y = enemy[i].y;
-
+				sound_flag[2] = TRUE;
 				SetEnemyShotGraph(i, j);
 				break;
 			}
@@ -415,6 +417,7 @@ void EnemyShotPattern2(int i)
 					enemy_shot[j].base.vel.x = 1 * cos(enemy_shot[j].rad);
 					enemy_shot[j].base.vel.y = 1 * sin(enemy_shot[j].rad);
 					SetEnemyShotGraph(i, j);
+					sound_flag[2] = TRUE;
 					break;
 				}
 			}
@@ -458,6 +461,7 @@ void EnemyShotPattern3(int i)
 
 				if (sum > 8)
 				{
+					sound_flag[2] = TRUE;
 					sum = 0;
 					break;
 				}
@@ -500,6 +504,7 @@ void EnemyShotPattern4(int i)
 
 				if (sum > 72)
 				{
+					sound_flag[2] = TRUE;
 					sum = 0;
 					break;
 				}
@@ -542,6 +547,7 @@ void EnemyShotPattern5(int i)
 
 				if (sum > 36)
 				{
+					sound_flag[2] = TRUE;
 					sum = 0;
 					break;
 				}
@@ -584,6 +590,7 @@ void EnemyShotPattern6(int i)
 
 				if (sum > 12)
 				{
+					sound_flag[2] = TRUE;
 					sum = 0;
 					break;
 				}
@@ -626,6 +633,7 @@ void EnemyShotPattern7(int i)
 
 				if (sum > 8)
 				{
+					sound_flag[2] = TRUE;
 					sum = 0;
 					break;
 				}
@@ -680,6 +688,7 @@ void EnemyShotPattern8(int i)
 
 				if (sum > 12)
 				{
+					sound_flag[2] = TRUE;
 					sum = 0;
 					break;
 				}
@@ -710,6 +719,7 @@ void EnemyShotPattern8(int i)
 
 				if (sum > 12)
 				{
+					sound_flag[2] = TRUE;
 					sum = 0;
 					break;
 				}
@@ -790,6 +800,7 @@ void EnemyShotPattern9(int i)
 				break;
 			}
 		}
+		sound_flag[2] = TRUE;
 	}
 }
 // ‚¤‚¸‚Ü‚« / ‚R‚Â
@@ -890,6 +901,7 @@ void EnemyShotPattern10(int i)
 				break;
 			}
 		}
+		sound_flag[2] = TRUE;
 	}
 }
 // ‚¤‚¸‚Ü‚« / ‚S‚Â
@@ -1025,6 +1037,7 @@ void EnemyShotPattern11(int i)
 				break;
 			}
 		}
+		sound_flag[2] = TRUE;
 	}
 }
 // ’¼ü / ˆê‰ñ‚Å10”­ / ‚»‚ê‚¼‚ê‘¬“x‚ªˆá‚¤
@@ -1095,6 +1108,7 @@ void EnemyShotPattern12(int i)
 
 				if (sum > 10)
 				{
+					sound_flag[2] = TRUE;
 					break;
 				}
 				sum++;
@@ -1180,6 +1194,7 @@ void EnemyShotPattern13(int i)
 				}
 			}
 		}
+		sound_flag[2] = TRUE;
 	}
 }
 // ‚¤‚¸‚Ü‚« / ”‚ªŽw’è‚Å‚«‚é
@@ -1236,6 +1251,7 @@ void EnemyShotPattern14(int i, int num)
 				}
 			}
 		}
+		sound_flag[2] = TRUE;
 	}
 	if (shot_count[i] > 360)
 	{
@@ -1279,7 +1295,7 @@ void EnemyShotPattern15(int i)
 				{
 					state[j] = -1;
 				}
-
+				sound_flag[2] = TRUE;
 				break;
 			}
 		}

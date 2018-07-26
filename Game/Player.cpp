@@ -7,6 +7,7 @@
 #include "Score.h"
 #include "Item.h"
 #include "Defines.h"
+#include "Sound.h"
 
 #define BOM_SHOT_NUM 8
 
@@ -65,7 +66,7 @@ void InitPlayer(void)
 	player.vel.x = PLAYER_SPEED;	player.vel.y = PLAYER_SPEED;
 
 	player_life = 5;
-	player_bom = 3;
+	player_bom = 5;
 
 	shot_power = 1;
 
@@ -410,6 +411,8 @@ void MovePlayerShot(void)
 				{
 					// ƒtƒ‰ƒO‚ðTRUE‚É‚·‚é
 					player_shot[i].flag = TRUE;
+					// ‰¹‚ð–Â‚ç‚·
+					sound_flag[1] = TRUE;
 
 					// shot_power ‚É‰ž‚¶‚Ä’e“¹‚ð•Ï‚¦‚é
 					switch (shot_power)
@@ -558,6 +561,7 @@ void MovePlayerShot(void)
 						}
 					}
 					//
+					
 				}
 			}
 		}
@@ -650,6 +654,7 @@ void MoveBom(BOMB type)
 					SetEnemyDeadFlag(i);
 					SetDeadEffect(i);
 					SetEnemyKillScore();
+					sound_flag[4] = TRUE;
 					SetItemFlag(enemy[i].item, enemy[i].x, enemy[i].y);
 				}
 				for (j = 0; j < BOM_SHOT_NUM; j++)
@@ -659,6 +664,7 @@ void MoveBom(BOMB type)
 						SetEnemyDeadFlag(i);
 						SetDeadEffect(i);
 						SetEnemyKillScore();
+						sound_flag[4] = TRUE;
 						SetItemFlag(enemy[i].item, enemy[i].x, enemy[i].y);
 					}
 				}
