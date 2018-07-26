@@ -1,4 +1,5 @@
 #pragma once
+#include "MyLibrary/MyLibrary.h"
 
 extern FILE *fp;					// エネミーデータをcsvファイルから読み込む用
 extern EnemyData enemy[256];		// エネミーオブジェクト

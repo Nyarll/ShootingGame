@@ -1,4 +1,5 @@
 #pragma once
+#include "MyLibrary/MyLibrary.h"
 
 #define ITEM_NUM 2048
 #define ITEM_TYPE_NUM 4

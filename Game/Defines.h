@@ -1,5 +1,7 @@
 #pragma once
 
+#include "MyLibrary/MyLibrary.h"
+
 void InitGameCount(void);
 void UpdateGameCount(void);
 

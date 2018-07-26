@@ -1,5 +1,7 @@
 #pragma once
 
+#include "MyLibrary/MyLibrary.h"
+
 // プロトタイプ宣言
 
 void InitScene(void);

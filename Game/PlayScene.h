@@ -1,5 +1,7 @@
 #pragma once
 
+#include "MyLibrary/MyLibrary.h"
+
 // ステージクリアの処理
 void InitStage(void);		// クリアしたなら初期化
 void StageClearCheck(void);	// クリアしたかどうか

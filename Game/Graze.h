@@ -1,4 +1,5 @@
 #pragma once
+#include "MyLibrary/MyLibrary.h"
 
 void InitGraze(void);
 void MoveGraze(void);

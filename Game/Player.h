@@ -1,5 +1,7 @@
 #pragma once
 
+#include "MyLibrary/MyLibrary.h"
+
 extern LIFE player_life;
 extern BOMB player_bom;
 
