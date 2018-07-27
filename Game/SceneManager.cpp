@@ -79,6 +79,7 @@ void UpdateScene(void)
 			InitGameCount();
 			InitPlay();
 			InitResult();
+			sound_handle[0] = -1;
 			active_scene = next_scene;
 			next_scene = SCENE_PLAY;
 		}
